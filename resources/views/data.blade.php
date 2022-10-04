@@ -5,7 +5,7 @@ $delivery_types = ['' => 'Не выбрано', '1' => 'Самовывоз', '2'
     <div class="form-group">
         <img src="{{ asset('img/logo.png') }}" alt="" style="margin-bottom: 30px">
     </div>
-    <?php if( isset($product) && $product ): ?>
+    <?php if( isset($product_id) && $product_id ): ?>
     <div class="form-group">
         <label for="inputDate">Наименование товара: </label>
         <a href="/product/<?= $product['alias'] ?>" target="_blank"> <?= $product['title'] ?></a>
@@ -18,7 +18,7 @@ $delivery_types = ['' => 'Не выбрано', '1' => 'Самовывоз', '2'
         <label for="inputDate">Дата заказа: </label> <?= date('dd.MM.Y H:m:s', strtotime($date)) ?>
     </div>
     <div class="form-group col_2">
-        <label for="inputName">Способ доставки:</label> <?= (array_key_exists($delivery, $delivery_types)) ? $delivery_types[$$delivery] : '-' ?>
+        <label for="inputName">Способ доставки:</label> <?= (array_key_exists($delivery, $delivery_types)) ? $delivery_types[$delivery] : '-' ?>
     </div>
     <div class="form-group col_2">
         <label for="inputName">ФИО:</label> <?= $firstname ?> <?= $lastname ?>
@@ -45,7 +45,7 @@ $delivery_types = ['' => 'Не выбрано', '1' => 'Самовывоз', '2'
     </div>
     <?php endif; ?>
 
-    <?php if($product): ?>
+    <?php if($product_id): ?>
     <div class="form-group">
         <label for="inputName">Товар:</label> <a href="/products/<?= $product['alias'] ?>"><?= $product['title'] ?></a>
     </div>
