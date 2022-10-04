@@ -5,43 +5,43 @@ $delivery_types = ['' => 'Не выбрано', '1' => 'Самовывоз', '2'
     <div class="form-group">
         <img src="{{ asset('img/logo.png') }}" alt="" style="margin-bottom: 30px">
     </div>
-    <?php if( isset($data['product']) && $data['product'] ): ?>
+    <?php if( isset($product) && $product ): ?>
     <div class="form-group">
         <label for="inputDate">Наименование товара: </label>
-        <a href="/product/<?= $data['product']['alias'] ?>" target="_blank"> <?= $data['product']['title'] ?></a>
+        <a href="/product/<?= $product['alias'] ?>" target="_blank"> <?= $product['title'] ?></a>
     </div>
     <?php endif; ?>
     <div class="form-group">
-        <label for="inputDate">№ заказа: </label> <?= $data['id'] ?>
+        <label for="inputDate">№ заказа: </label> <?= $id ?>
     </div>
     <div class="form-group col_2">
-        <label for="inputDate">Дата заказа: </label> <?= date('dd.MM.Y H:m:s', $data['date']) ?>
+        <label for="inputDate">Дата заказа: </label> <?= date('dd.MM.Y H:m:s', strtotime($date)) ?>
     </div>
     <div class="form-group col_2">
-        <label for="inputName">Способ доставки:</label> <?= (array_key_exists($data['delivery'], $delivery_types)) ? $delivery_types[$data['delivery']] : '-' ?>
+        <label for="inputName">Способ доставки:</label> <?= (array_key_exists($delivery, $delivery_types)) ? $delivery_types[$$delivery] : '-' ?>
     </div>
     <div class="form-group col_2">
-        <label for="inputName">ФИО:</label> <?= $data['firstname'] ?> <?= $data['lastname'] ?>
+        <label for="inputName">ФИО:</label> <?= $firstname ?> <?= $lastname ?>
     </div>
-    <?php if( $data['city'] ): ?>
+    <?php if( $city ): ?>
     <div class="form-group col_2">
-        <label for="inputName">Адрес доставки:</label> <?= $data['city'] ?> <?=  $data['address'] ?>
+        <label for="inputName">Адрес доставки:</label> <?= $city ?> <?=  $address ?>
     </div>
     <?php endif; ?>
-    <?php if( $data['iin'] ): ?>
+    <?php if( $iin ): ?>
     <div class="form-group">
-        <label for="inputEmail">ИНН:</label> <?= $data['iin'] ?>
+        <label for="inputEmail">ИНН:</label> <?= $iin ?>
     </div>
     <?php endif; ?>
-    <?php if( $data['phone'] ): ?>
+    <?php if( $phone ): ?>
     <div class="form-group">
-        <label for="inputPhone">Телефон:</label> <a href="tel:+<?= preg_replace('/[^0-9]/', '', $data['phone']) ?> "><?= $data['phone'] ?></a>
+        <label for="inputPhone">Телефон:</label> <a href="tel:+<?= preg_replace('/[^0-9]/', '', $phone) ?> "><?= $phone ?></a>
     </div>
     <?php endif; ?>
 
-    <?php if( $data['message'] ): ?>
+    <?php if( $message ): ?>
     <div class="form-group">
-        <label for="inputName">Комментарий к заказу:</label> <?= $data['message'] ?>
+        <label for="inputName">Комментарий к заказу:</label> <?= $message ?>
     </div>
     <?php endif; ?>
 
@@ -51,14 +51,14 @@ $delivery_types = ['' => 'Не выбрано', '1' => 'Самовывоз', '2'
     </div>
     <?php endif; ?>
 
-    <?php if( $data['data'] ): ?>
+    <?php if( $data ): ?>
     <div class="order_info">
-            <?= $data['data'] ?>
+            <?= $data ?>
     </div>
     <?php endif; ?>
-    <?php if( $data['senddata'] ): ?>
+    <?php if( $senddata ): ?>
         <?php
-        $json_data = json_decode($data['senddata'], true);
+        $json_data = json_decode($senddata, true);
         ?>
     <div class="order_info">
         <table>
