@@ -25,6 +25,7 @@ class PDFController extends Controller
 //        return $generatedPdfFilename;
         $pdf = Pdf::loadView('data', $data);
         $pdf->setPaper('A4', 'portrait');
+        $pdf->setOption('fontHeightRatio', 0.8);
         $pdf->setOption('margin-top', 0);
         $pdf->setOption('margin-bottom', 0);
         $pdf->setOption('margin-left', 0);
