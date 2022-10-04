@@ -1,9 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ public_path('css/adminlte.min.css') }}">
+        <link rel="stylesheet" href="{{ public_path('css/style.css') }}">
+        <style>
+            * {
+                /*font-family: Helvetica, sans-serif;*/
+                font-family: "DejaVu Sans", sans-serif;
+            }
+        </style>
+    </head>
+<body>
 <?php
 $delivery_types = ['' => 'Не выбрано', '1' => 'Самовывоз', '2' => 'Доставка'];
 ?>
 <div class="card-body order-table"  id="element-to-print">
     <div class="form-group">
-        <img src="{{ asset('img/logo.png') }}" alt="" style="margin-bottom: 30px">
+        <img src="{{ public_path('img/logo.png') }}" alt="" style="margin-bottom: 30px">
     </div>
     <?php if( isset($product_id) && $product_id ): ?>
     <div class="form-group">
@@ -96,3 +112,5 @@ $delivery_types = ['' => 'Не выбрано', '1' => 'Самовывоз', '2'
         <label>Тел: +7-707-777-77-77</label>
     </div>
 </div>
+</body>
+</html>

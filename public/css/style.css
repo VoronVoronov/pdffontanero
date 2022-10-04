@@ -1,0 +1,28 @@
+.download-file {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: rgb(16, 228, 16);
+    color: #fff;
+    align-self: center;
+    margin-bottom: 40px;
+}
+
+.order-table .order_info table {
+    font-size: 14px;
+    min-width: unset;
+}
+
+table, tr, td, th, tbody, thead, tfoot {
+    page-break-inside: avoid !important;
+}
+
+
+.order_info td img {
+    width: 80px!important;
+    height: 60px!important;
+}
+
+.order-table .form-group {
+    margin-bottom: 0;
+}
