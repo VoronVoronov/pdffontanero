@@ -26,3 +26,9 @@ table, tr, td, th, tbody, thead, tfoot {
 .order-table .form-group {
     margin-bottom: 0;
 }
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
